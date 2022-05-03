@@ -27,44 +27,45 @@ home {
 `
 
 export async function getStaticProps() {
-  const data = await request({
-    query: HOMEPAGE_QUERY,
-  })
-  return {
-    props: data.home,
-  }
+	const data = await request({
+		query: HOMEPAGE_QUERY,
+	})
+	return {
+		props: data.home,
+	}
 }
 
 export default function Home(props) {
-  return (
-    <div
-      className='flex justify-center pb-10'
-      style={{
-        backgroundImage: 'url(static/images/subtle-prism.svg)',
-        backgroundAttachment: 'fixed',
-      }}>
-      <div className='max-w-7xl'>
-        {/*props.heroImage && (
+	return (
+		<div
+			className='flex justify-center pb-10'
+			style={{
+				backgroundImage: 'url(static/images/subtle-prism.svg)',
+				backgroundAttachment: 'fixed',
+			}}
+		>
+			<div className='max-w-7xl'>
+				{/*props.heroImage && (
           <Hero url={props.heroImage.url} alt={props.heroImage.alt} />
         )*/}
 
-        <div className='p-5'>
-          <h1>Home</h1>
-          <div className='grid gap-5'>
-            {props.grids &&
-              props.grids.map((item, key) => (
-                <ImgText
-                  key={key}
-                  text={item.text}
-                  url={item.image.url}
-                  maskUrl={item.mask.url}
-                  alt={item.image.alt}
-                  reverse={key % 2 != 0 ? true : false}
-                />
-              ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+				<div className='p-5'>
+					<h1>Home</h1>
+					<div className='grid gap-5'>
+						{props.grids &&
+							props.grids.map((item, key) => (
+								<ImgText
+									key={key}
+									text={item.text}
+									url={item.image.url}
+									maskUrl={item.mask.url}
+									alt={item.image.alt}
+									reverse={key % 2 != 0 ? true : false}
+								/>
+							))}
+					</div>
+				</div>
+			</div>
+		</div>
+	)
 }

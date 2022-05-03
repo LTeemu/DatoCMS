@@ -1,45 +1,35 @@
-import Link from 'next/link'
+import { motion } from 'framer-motion'
+import SidebarLink from './SidebarLink'
 
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
-  return (
-    <div className='fixed z-50 flex w-screen mt-[60px] sm:hidden h-[calc(100vh_-_60px)]'>
-      <div
-        className={'bg-black bg-opacity-70 w-screen relative'}
-        onClick={closeSidebar}
-        style={{
-          right: sidebarOpen ? 0 : '-100%',
-          opacity: sidebarOpen ? 1 : 0,
-          transition: '0.4s opacity linear',
-        }}></div>
-      <div
-        className='w-5/12 bg-[#5f9ea0] fixed h-[calc(100vh_-_60px)]'
-        style={{
-          right: sidebarOpen ? 0 : '-100%',
-          transition: sidebarOpen ? 'all 0.3s linear' : 'all 0.2s linear',
-          boxShadow: 'inset 5px 5px 5px rgb(69, 108, 109)',
-        }}>
-        <ul className='flex flex-col'>
-          <Link href={'/'}>
-            <a className='p-1.5 mx-3 mt-4 mb-2 text-center rounded-md bg-slate-200 hover:shadow-[4px_4px_rgb(192,192,192)] hover:hue-rotate-30 transition-all duration-300 hover:-translate-x-[2px] hover:-translate-y-[2px] shadow-[2px_2px_rgb(192,192,192)] text-[rgba(106,90,205)] font-bold'>
-              Home
-            </a>
-          </Link>
+	return (
+		<div className='fixed z-50 flex w-screen mt-[60px] sm:hidden h-[calc(100vh_-_60px)]'>
+			<motion.div
+				className={'w-screen h-screen fixed bg-black'}
+				animate={{ opacity: sidebarOpen ? 0.7 : 0 }}
+				transition={{ duration: 0.5, type: 'tween' }}
+			></motion.div>
 
-          <Link href={'/about'}>
-            <a className='p-1.5 mx-3 my-2 text-center rounded-md bg-slate-200 hover:shadow-[4px_4px_rgb(192,192,192)] hover:hue-rotate-30 transition-all duration-300 hover:-translate-x-[2px] hover:-translate-y-[2px] shadow-[2px_2px_rgb(192,192,192)] text-[rgba(106,90,205)] font-bold'>
-              About
-            </a>
-          </Link>
+			<div
+				className={`w-screen h-screen fixed ${
+					sidebarOpen ? 'block' : 'hidden'
+				}`}
+				onClick={closeSidebar}
+			></div>
 
-          <Link href={'/contact'}>
-            <a className='p-1.5 mx-3 my-2 text-center rounded-md bg-slate-200 hover:shadow-[4px_4px_rgb(192,192,192)] hover:hue-rotate-30 transition-all duration-300 hover:-translate-x-[2px] hover:-translate-y-[2px] shadow-[2px_2px_rgb(192,192,192)] text-[rgba(106,90,205)] font-bold'>
-              Contact
-            </a>
-          </Link>
-        </ul>
-      </div>
-    </div>
-  )
+			<motion.div
+				className='w-5/12 bg-[#5f9ea0] h-[calc(100vh_-_60px)] fixed right-[-100%] border-[#45676C] border-4 '
+				animate={{ right: sidebarOpen ? 0 : '-100%' }}
+				transition={{ duration: 0.5, type: 'easeInOut' }}
+			>
+				<ul className='flex flex-col'>
+					<SidebarLink href={'/'} text={'Home'} />
+					<SidebarLink href={'about'} text={'About'} />
+					<SidebarLink href={'contact'} text={'Contact'} />
+				</ul>
+			</motion.div>
+		</div>
+	)
 }
 
 export default Sidebar
