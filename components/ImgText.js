@@ -11,7 +11,7 @@ const ImgText = ({ text, url, alt, reverse, maskUrl }) => {
           height={'100%'}
           layout='responsive'
           objectFit={'cover'}
-          priority='true'
+          priority={true}
           style={{
             maskImage: `url(${maskUrl})`,
             WebkitMask: `url(${maskUrl})`,
