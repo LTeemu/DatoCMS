@@ -24,8 +24,8 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
 			>
 				<ul className='flex flex-col'>
 					<SidebarLink href={'/'} text={'Home'} />
-					<SidebarLink href={'about'} text={'About'} />
-					<SidebarLink href={'contact'} text={'Contact'} />
+					<SidebarLink href={'/about'} text={'About'} />
+					<SidebarLink href={'/contact'} text={'Contact'} />
 				</ul>
 			</motion.div>
 		</div>
