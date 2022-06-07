@@ -2,6 +2,8 @@ https://dato-cms-n9lete00.vercel.app/
 
 Project i did to test DatoCMS and practice building mobile navigation, component layout, image masking and animations.
 
+![chrome-capture-2022-5-7 (2)](https://user-images.githubusercontent.com/74067579/172348150-a4649be5-5ecd-4e87-bd79-e8af4138c02f.gif)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
