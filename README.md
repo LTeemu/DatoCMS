@@ -1,6 +1,6 @@
-datocms-teemul.vercel.app
+Vercel URL: https://datocms-teemul.vercel.app/
 
-Project i did to test DatoCMS and practice building mobile navigation, component layout, image masking and animations.
+Project i made to test DatoCMS and practice building mobile navigation, component layout, image masking and animations.
 
 ![chrome-capture-2022-5-7 (2)](https://user-images.githubusercontent.com/74067579/172348150-a4649be5-5ecd-4e87-bd79-e8af4138c02f.gif)
 
