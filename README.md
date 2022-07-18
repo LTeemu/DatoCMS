@@ -1,4 +1,4 @@
-https://dato-cms-n9lete00.vercel.app/
+datocms-teemul.vercel.app
 
 Project i did to test DatoCMS and practice building mobile navigation, component layout, image masking and animations.
 
