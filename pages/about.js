@@ -1,8 +1,3 @@
-import { request } from '../lib/datocms'
-import { qgl } from 'graphql-request'
-import Image from 'next/image'
-import Head from 'next/head'
-
 export default function About(props) {
 	return (
 		<div

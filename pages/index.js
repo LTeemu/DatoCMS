@@ -1,9 +1,6 @@
 import { request } from '../lib/datocms'
-import { qgl } from 'graphql-request'
 import Hero from '../components/Hero'
-import Image from 'next/image'
 import React from 'react'
-import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import ImgText from '../components/ImgText'
 
 const HOMEPAGE_QUERY = `query {
