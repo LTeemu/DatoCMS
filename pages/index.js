@@ -45,9 +45,9 @@ export default function Home(props) {
 			}}
 		>
 			<div className='max-w-7xl'>
-				{/*props.heroImage && (
-          <Hero url={props.heroImage.url} alt={props.heroImage.alt} />
-        )*/}
+				{props.heroImage && (
+					<Hero url={props.heroImage.url} alt={props.heroImage.alt} />
+				)}
 
 				<div className='p-5'>
 					<h1>Home</h1>
