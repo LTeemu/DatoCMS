@@ -3,32 +3,26 @@ import Image from 'next/image'
 import Sidebar from './Sidebar'
 import { useReducer, useEffect, useState } from 'react'
 import Hamburger from './Hamburger'
-
-import {
-	disableBodyScroll,
-	enableBodyScroll,
-	clearAllBodyScrollLocks,
-} from 'body-scroll-lock'
-import { BodyScrollOptions } from 'body-scroll-lock'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 const Navbar = () => {
 	const [sidebarOpen, toggleSidebar] = useReducer((p) => !p, false)
 	const [disabled, setDisabled] = useState(false)
 	const [windowSize, setWindowSize] = useState({
 		width: undefined,
-		//height: undefined,
 	})
 
 	//Window resize listener
 	useEffect(() => {
+		window.addEventListener('resize', handleResize)
+
 		function handleResize() {
 			setWindowSize({
 				width: window.innerWidth,
-				//height: window.innerHeight,
 			})
 		}
-		window.addEventListener('resize', handleResize)
 		handleResize()
+
 		return () => window.removeEventListener('resize', handleResize)
 	}, [])
 
@@ -47,23 +41,10 @@ const Navbar = () => {
 		}, 200)
 
 		sidebarOpen && window.innerWidth < 640
-			? disableBodyScroll(
-					'html',
-					(BodyScrollOptions = {
-						reserveScrollBarGap: true,
-					})
-			  )
-			: enableBodyScroll(
-					'html',
-					(BodyScrollOptions = {
-						clearAllBodyScrollLocks: true,
-					})
-			  )
+			? disableBodyScroll('html')
+			: enableBodyScroll('html',)
 
 		return () => {
-			BodyScrollOptions = {
-				reserveScrollBarGap: false,
-			}
 		}
 	}, [sidebarOpen])
 
@@ -110,11 +91,7 @@ const Navbar = () => {
 						</Link>
 					</ul>
 				</div>
-				<button
-					className='block sm:hidden'
-					onClick={toggleSidebar}
-					disabled={disabled}
-				>
+				<button className='block sm:hidden' onClick={toggleSidebar} disabled={disabled}>
 					<Hamburger sidebarOpen={sidebarOpen} />
 				</button>
 			</div>
