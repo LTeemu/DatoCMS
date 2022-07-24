@@ -10,6 +10,7 @@ const Hero = ({ url, alt }) => {
 			objectPosition='center'
 			width={'100%'}
 			height={'33vh'}
+			priority={true}
 		/>
 	)
 }
