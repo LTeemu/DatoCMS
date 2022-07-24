@@ -35,11 +35,7 @@ export async function getStaticProps() {
 export default function Home(props) {
 	return (
 		<div
-			className='flex justify-center pb-10'
-			style={{
-				backgroundImage: 'url(static/images/subtle-prism.svg)',
-				backgroundAttachment: 'fixed',
-			}}
+			className="flex justify-center pb-10 bg-fixed bg-[url('/static/images/subtle-prism.svg')]"
 		>
 			<div className='max-w-7xl'>
 				{props.heroImage && (

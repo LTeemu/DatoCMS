@@ -10,13 +10,7 @@ const ImgText = ({ text, url, alt, reverse, maskUrl }) => {
 	useEffect(() => {
 		var tl = gsap.timeline({
 			defaults: {
-				duration: 2,
-				ease: 'elastic(1, 0.5)',
-				stagger: {
-					each: 0.5,
-					repeat: -1,
-					yoyo: true,
-				},
+				duration: 2, ease: 'elastic(1, 0.5)', stagger: { each: 0.5, repeat: -1, yoyo: true },
 			},
 		})
 		tl.fromTo('.stagger', { y: -5 }, { y: 0 })

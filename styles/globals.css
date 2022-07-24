@@ -3,24 +3,24 @@
 @tailwind utilities;
 
 * {
-	font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 html {
-	background-color: rgb(241 245 249);
+  background-color: rgb(241 245 249);
 }
 
 h1 {
-	font-size: x-large;
-	font-weight: 700;
+  font-size: x-large;
+  font-weight: 700;
 }
 
 a {
-	font-size: medium;
-	font-weight: 500;
+  font-size: medium;
+  font-weight: 500;
 }
 
 p {
-	font-size: small;
-	font-weight: 300;
+  font-size: small;
+  font-weight: 300;
 }
