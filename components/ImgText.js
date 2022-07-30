@@ -32,7 +32,6 @@ const ImgText = ({ text, url, alt, reverse, maskUrl }) => {
 						WebkitMask: `url(${maskUrl})`,
 						maskSize: '100% 100%',
 						WebkitMaskSize: '100% 100%',
-						zIndex: -1
 					}}
 				/>
 			</div>

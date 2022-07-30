@@ -1,16 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Sidebar from './Sidebar'
-import { useReducer, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Hamburger from './Hamburger'
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
-	const [sidebarOpen, toggleSidebar] = useReducer((p) => !p, false)
+	const [sidebarOpen, toggleSidebar] = useState(false)
 	const [disabled, setDisabled] = useState(false)
-	const [windowSize, setWindowSize] = useState({
-		width: undefined,
-	})
+	const [windowSize, setWindowSize] = useState({ width: undefined })
+	const { events } = useRouter();
 
 	//Window resize listener
 	useEffect(() => {
@@ -43,20 +43,23 @@ const Navbar = () => {
 		sidebarOpen && window.innerWidth < 640
 			? disableBodyScroll('html')
 			: enableBodyScroll('html',)
-
-		return () => {
-		}
 	}, [sidebarOpen])
 
-	//Used by sidebar component to close when clicking dark area
 	const closeSidebar = () => {
 		toggleSidebar(false)
 	}
 
+	useEffect(() => {
+		events.on('routeChangeStart', closeSidebar);
+		return () => {
+			events.off('routeChangeStart', closeSidebar);
+		};
+	}, []);
+
 	return (
 		<>
 			<Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
-			<div className='flex items-center justify-between px-4 py-2.5 bg-slate-100 min-w-full z-50 top-0 sticky h-[60px]'>
+			<header className='flex items-center justify-between px-4 py-2.5 bg-slate-100 min-w-full z-50 top-0 sticky h-[60px]'>
 				<div className='relative flex'>
 					<Link href={'/'}>
 						<a className='flex'>
@@ -70,7 +73,8 @@ const Navbar = () => {
 					</Link>
 					<h1 className='ml-3'>Logo</h1>
 				</div>
-				<div>
+
+				<nav>
 					<ul className='hidden sm:flex'>
 						<Link href={'/'}>
 							<a className='p-1 mr-5 border-2 border-transparent hover:border-b-blue-900 last:mr-0'>
@@ -90,11 +94,12 @@ const Navbar = () => {
 							</a>
 						</Link>
 					</ul>
-				</div>
-				<button className='block sm:hidden' onClick={toggleSidebar} disabled={disabled}>
+				</nav>
+
+				<button className='block sm:hidden' onClick={() => toggleSidebar(!sidebarOpen)} disabled={disabled}>
 					<Hamburger sidebarOpen={sidebarOpen} />
 				</button>
-			</div>
+			</header>
 		</>
 	)
 }
