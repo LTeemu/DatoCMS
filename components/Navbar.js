@@ -59,20 +59,13 @@ const Navbar = () => {
 	return (
 		<>
 			<Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
-			<header className='flex items-center justify-between px-4 py-2.5 bg-slate-100 min-w-full z-50 top-0 sticky h-[60px]'>
-				<div className='relative flex'>
-					<Link href={'/'}>
-						<a className='flex'>
-							<Image
-								src='/static/images/potato-5039995.svg'
-								width={32}
-								height={40}
-								alt={'potato logo'}
-							/>
-						</a>
-					</Link>
-					<h1 className='ml-3'>Logo</h1>
-				</div>
+			<header className='flex items-center justify-between px-4 py-2.5 bg-slate-100 w-screen z-50 top-0 sticky h-[60px]'>
+				<Link href={'/'}>
+					<a className='flex items-center'>
+						<Image src='/static/images/potato-5039995.svg' width={32} height={40} alt={'potato logo'} />
+						<span className='ml-3 text-2xl'>Logo</span>
+					</a>
+				</Link>
 
 				<nav>
 					<ul className='hidden sm:flex'>
