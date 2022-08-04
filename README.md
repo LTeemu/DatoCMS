@@ -6,6 +6,9 @@ Project i made to test DatoCMS and practice building mobile navigation, componen
 ![kuva](https://user-images.githubusercontent.com/74067579/180637930-83f78ab6-876c-4d27-a334-7a86e38263f9.png)
 
 
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
