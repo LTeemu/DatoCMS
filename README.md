@@ -2,8 +2,7 @@
 Made to test DatoCMS and practice building mobile navigation, component layout, image masking and animations.<br/>
 https://datocms-teemul.vercel.app/<br/><br/>
 
-![chrome-capture-2022-5-7 (2)](https://user-images.githubusercontent.com/74067579/172348150-a4649be5-5ecd-4e87-bd79-e8af4138c02f.gif)
-![kuva](https://user-images.githubusercontent.com/74067579/180637930-83f78ab6-876c-4d27-a334-7a86e38263f9.png)
+![dato](https://user-images.githubusercontent.com/74067579/185762320-80b96358-aac3-4761-af98-2a8a23b5fe05.jpg)
 
 
 
